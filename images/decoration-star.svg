@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 231 231">
+  <defs>
+    <style>.cls-1 { fill: #96bf48; opacity: 0.1 }</style>
+  </defs>
+  <circle cx="115.5" cy="115.5" r="110" class="cls-1" />
+  <path class="cls-1" d="M115.5,5 L140,100 L210,115 L140,130 L115.5,225 L91,130 L20,115 L91,100 Z" />
+</svg>
