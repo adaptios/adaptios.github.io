@@ -11,27 +11,105 @@
 }
 
 .header .decoration-star {
-  top: 80px;
-  left: -200px;
-  width: 500px;
-  opacity: 0.7;
+  top: 120px;
+  left: -220px;
+  width: 420px;
+  opacity: 0.14;
 }
 
 .header .decoration-star-2 {
-  top: 80px;
-  right: -200px;
-  width: 500px;
-  opacity: 0.7;
+  top: 120px;
+  right: -220px;
+  width: 420px;
+  opacity: 0.14;
 }
 
 .navbar {
+  padding: 1.25rem 0;
   transition: all 0.5s ease-in-out;
+}
+
+.brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0;
+}
+
+.brand-mark {
+  display: block;
+  height: clamp(38px, 4vw, 52px);
+  width: auto;
+}
+
+.brand-wordmark {
+  color: var(--bs-dark);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.navbar .nav-link {
+  align-items: center;
+  display: inline-flex;
+  min-height: 44px;
 }
 
 .navbar-sticky {
   background: #fff;
-  opacity: 0.9;
+  opacity: 0.96;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.header {
+  padding: clamp(3.5rem, 7vw, 6rem) 0 clamp(4rem, 8vw, 6.5rem);
+}
+
+.header-copy {
+  max-width: 36rem;
+}
+
+.header h1 {
+  font-size: clamp(2.8rem, 4.6vw, 5rem);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+}
+
+.header .lead {
+  font-size: clamp(1.15rem, 1.6vw, 1.45rem);
+  line-height: 1.65;
+  margin-bottom: 0;
+  max-width: 32rem;
+}
+
+.header .image-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-brand-visual {
+  isolation: isolate;
+  margin-left: auto;
+  position: relative;
+  width: min(100%, 30rem);
+}
+
+.hero-brand-visual::before {
+  background: radial-gradient(circle, rgba(155, 201, 61, 0.14) 0%, rgba(255, 255, 255, 0) 72%);
+  content: "";
+  inset: 6% 2% 4%;
+  position: absolute;
+  z-index: -1;
+}
+
+.hero-brand-image {
+  display: block;
+  filter: drop-shadow(0 24px 48px rgba(25, 30, 71, 0.12));
+  margin-left: auto;
+  max-width: 100%;
+  width: clamp(280px, 36vw, 440px);
 }
 
 .details .decoration-star {
@@ -82,23 +160,55 @@
   .xl-text {
     font-size: 50px;
   }
+  .navbar {
+    padding: 1rem 0;
+  }
+  .brand-lockup {
+    gap: 0.65rem;
+  }
+  .brand-mark {
+    height: 40px;
+  }
+  .brand-wordmark {
+    font-size: 1rem;
+  }
   .navbar .btn-outline-secondary {
     margin-top: 20px;
   }
   .header {
-    margin-top: 0px !important;
+    padding: 2rem 0 4rem;
     text-align: center;
   }
+  .header-copy {
+    margin: 0 auto;
+  }
+  .header h1 {
+    font-size: clamp(2.3rem, 10vw, 3.8rem);
+  }
+  .header .lead {
+    margin: 0 auto;
+  }
   .header .decoration-star {
-    left: -100px;
-    width: 250px;
+    left: -120px;
+    top: 180px;
+    width: 240px;
   }
   .header .decoration-star-2 {
-    right: -100px;
-    width: 250px;
+    right: -120px;
+    top: 180px;
+    width: 240px;
   }
   .header .image-container {
-    margin-top: 30px;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  .hero-brand-visual {
+    margin: 0 auto;
+    width: min(100%, 18rem);
+  }
+  .hero-brand-image {
+    margin: 0 auto;
+    width: min(100%, 15rem);
   }
   .services .col-md-4 {
     border-bottom: 1px #ccc solid;
