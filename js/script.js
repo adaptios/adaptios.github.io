@@ -71,8 +71,27 @@ function lazyLoadHeroVideo() {
   }
 }
 
+function collapseMobileNavOnClick() {
+  const navMenu = document.querySelector('#navbarNavDropdown');
+
+  if (!navMenu || !window.bootstrap) {
+    return;
+  }
+
+  document.querySelectorAll('#navbarNavDropdown .nav-link').forEach((link) => {
+    link.addEventListener('click', () => {
+      const collapse = window.bootstrap.Collapse.getOrCreateInstance(navMenu, {
+        toggle: false,
+      });
+
+      collapse.hide();
+    });
+  });
+}
+
 // Event Listeners
 document.addEventListener('DOMContentLoaded', userScroll);
 document.addEventListener('DOMContentLoaded', incrementStats);
+document.addEventListener('DOMContentLoaded', collapseMobileNavOnClick);
 window.addEventListener('load', lazyLoadHeroVideo);
 document.querySelector('#to-top').addEventListener('click', scrollToTop);
