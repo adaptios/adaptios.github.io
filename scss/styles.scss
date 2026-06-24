@@ -64,6 +64,12 @@
   box-shadow: 0 8px 24px rgba(25, 30, 71, 0.12);
 }
 
+.navbar:has(.navbar-collapse.show),
+.navbar:has(.navbar-collapse.collapsing) {
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(25, 30, 71, 0.12);
+}
+
 .header {
   padding: clamp(8rem, 10vw, 10rem) 0 clamp(4rem, 8vw, 6.5rem);
 }
