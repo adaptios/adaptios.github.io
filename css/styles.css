@@ -25,6 +25,7 @@
 }
 
 .navbar {
+  background: transparent;
   padding: 1.25rem 0;
   transition: all 0.5s ease-in-out;
 }
@@ -58,12 +59,71 @@
 
 .navbar-sticky {
   background: #fff;
-  opacity: 0.96;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 24px rgba(25, 30, 71, 0.12);
+}
+
+.navbar:has(.navbar-collapse.show),
+.navbar:has(.navbar-collapse.collapsing) {
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(25, 30, 71, 0.12);
 }
 
 .header {
-  padding: clamp(3.5rem, 7vw, 6rem) 0 clamp(4rem, 8vw, 6.5rem);
+  padding: clamp(8rem, 10vw, 10rem) 0 clamp(4rem, 8vw, 6.5rem);
+}
+
+.header::before {
+  background: linear-gradient(90deg, rgba(249, 250, 254, 0.78) 0%, rgba(249, 250, 254, 0.55) 34%, rgba(249, 250, 254, 0.2) 64%, rgba(249, 250, 254, 0.08) 100%);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.header > .container {
+  position: relative;
+  z-index: 3;
+}
+
+.hero-media,
+.hero-media-poster,
+.hero-video {
+  inset: 0;
+  position: absolute;
+}
+
+.hero-media {
+  background-color: #f5f7f3;
+  z-index: 0;
+}
+
+.hero-media-poster,
+.hero-video {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.hero-media-poster {
+  background-image: url("../images/adaptios-hero-poster.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.hero-video {
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.hero-video.is-loaded {
+  opacity: 1;
+}
+
+.header .decoration-star,
+.header .decoration-star-2 {
+  z-index: 2;
 }
 
 .header-copy {
@@ -71,17 +131,22 @@
 }
 
 .header h1 {
+  color: #191e47;
   font-size: clamp(2.8rem, 4.6vw, 5rem);
   letter-spacing: -0.03em;
   line-height: 1.05;
   margin-bottom: 1.5rem;
+  text-shadow: 0 2px 18px rgba(255, 255, 255, 0.82);
 }
 
 .header .lead {
+  color: #2f3440;
   font-size: clamp(1.15rem, 1.6vw, 1.45rem);
+  font-weight: 600;
   line-height: 1.65;
   margin-bottom: 0;
   max-width: 32rem;
+  text-shadow: 0 2px 14px rgba(255, 255, 255, 0.86);
 }
 
 .header .image-container {
@@ -176,8 +241,11 @@
     margin-top: 20px;
   }
   .header {
-    padding: 2rem 0 4rem;
+    padding: 7rem 0 4rem;
     text-align: center;
+  }
+  .header::before {
+    background: rgba(249, 250, 254, 0.58);
   }
   .header-copy {
     margin: 0 auto;
